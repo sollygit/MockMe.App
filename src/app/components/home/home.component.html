@@ -1,0 +1,38 @@
+<div class="component" *ngIf="authService.user$ | async as user; else login">
+  <h3>Mocked Products</h3>
+  <mat-progress-bar *ngIf="products.length === 0" mode="indeterminate"></mat-progress-bar>
+
+  <div *ngIf="hasPaging">
+    <button (click)="firstPage()" mat-button> First</button>
+    <button (click)="previousPage()" mat-button> Previous</button>
+    <button (click)="nextPage()" mat-button> Next</button>
+    <button (click)="lastPage()" mat-button> Last</button>
+  </div>
+
+  <mat-card *ngFor="let product of products" class="card">
+    <mat-card-header>
+      <mat-card-title>#{{product.id}} {{product.name}}</mat-card-title>
+      <mat-card-subtitle>${{product.price}} / {{product.quantity}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{product.description}}
+      </p>
+      <img class="img-prod" src="{{ product.imageUrl }}" alt="" />
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary"> Buy</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<ng-template #login>
+  <div class="card mt-4 shadow">
+    <h4 class="card-header">You are logged out</h4>
+    <div class="card-body">
+      <div class="m-2">
+        Please click <a routerLink="/login">here</a> to login.
+      </div>
+    </div>
+  </div>
+</ng-template>

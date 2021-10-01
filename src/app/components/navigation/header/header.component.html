@@ -1,0 +1,14 @@
+<mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="onToggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h1 routerLink="/" class="example-app-name">Mock Me Demo</h1>
+  <a mat-button href="{{restUrl}}" target="_blank"><mat-icon>settings</mat-icon></a>
+  <span class="flexExpand"></span>
+  <div *ngIf="authService.user$ | async as user">
+    <span class="greeting">Hello {{ user.username }}</span>
+    <a mat-button href="#" (click)="logout()">
+      <mat-icon>logout</mat-icon>Logout
+    </a>
+</div>
+</mat-toolbar>

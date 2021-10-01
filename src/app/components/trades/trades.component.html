@@ -1,0 +1,113 @@
+<div class="component">
+  <h3>Trades Total: {{ TotalAmount | currency }}</h3>
+  
+  <div class="pull-right">
+    <button mat-raised-button color="primary" (click)="generate()">
+      <span class="mdc-button__ripple"></span>
+      <i class="material-icons mdc-button__icon" aria-hidden="true">wifi_protected_setup</i>
+      <span class="mdc-button__label">Generate</span>
+    </button>
+  </div>
+  <div class="d-flex">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical" (click)="onNavClick()">
+      <li ngbNavItem="trades">
+        <a ngbNavLink>Trades</a>
+        <ng-template ngbNavContent>
+          <div class="example-header">
+            <mat-form-field>
+              <input matInput (keyup)="applyFilter($any($event).target.value)" placeholder="Filter">
+            </mat-form-field>
+          </div>
+          <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+            </ng-container>
+            <ng-container matColumnDef="asset">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Asset</th>
+              <td mat-cell *matCellDef="let element"> {{element.asset.name}} </td>
+            </ng-container>
+            <ng-container matColumnDef="expiration">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Expiration </th>
+              <td mat-cell *matCellDef="let element"> {{element.expiration}} </td>
+            </ng-container>
+            <ng-container matColumnDef="amount">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+              <td mat-cell *matCellDef="let element" [style.color]="element.color"> {{element.amount | currency:"USD":"symbol":"1.2-2"}} </td>
+            </ng-container>
+            <ng-container matColumnDef="direction">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Direction </th>
+              <td mat-cell *matCellDef="let element"> {{element.direction | boolean}} </td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef> &nbsp; </th>
+              <td mat-cell *matCellDef="let element">
+                <a mat-raised-button href="javascript:;" (click)="deleteTrade(element.id)">
+                  <mat-icon>delete</mat-icon>
+                </a>
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </ng-template>
+      </li>
+      <li ngbNavItem="reports">
+        <a ngbNavLink>Reports</a>
+        <ng-template ngbNavContent>
+          <section>
+            <span>Most Used Assets</span>
+            <table *ngIf="MostUsedAssets">
+              <thead>
+                <tr>
+                  <th>Asset</th>
+                  <th>Used</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let asset of MostUsedAssets">
+                  <td>{{ asset.asset }}</td>
+                  <td>{{ asset.used }}</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total:</td>
+                  <td>{{ TotalUsed }}</td>
+                </tr>
+              </tfoot>
+            </table>
+            <br />
+            <span>Long vs. Short</span>
+            <table *ngIf="ShortLongAssets">
+              <thead>
+                <tr>
+                  <th>Asset</th>
+                  <th>Short</th>
+                  <th>Long</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let asset of ShortLongAssets">
+                  <td>{{ asset.asset }}</td>
+                  <td>{{ asset.short }}</td>
+                  <td>{{ asset.long }}</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Total:</td>
+                  <td>{{ TotalShort }}</td>
+                  <td>{{ TotalLong }}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </section>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="ml-4 mr-4"></div>
+  </div>
+  <mat-progress-bar *ngIf="!dataSource" mode="indeterminate"></mat-progress-bar>
+</div>

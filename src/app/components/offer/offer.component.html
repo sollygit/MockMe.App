@@ -1,0 +1,58 @@
+<div class="component">
+  <h3>Application Form</h3>
+  <div class="logo-container">
+    <a class="circle-link" href="https://www.thereachagency.com" target="_blank" rel="noopener">
+      <img class="reach-logo" src="../assets/reach-logo.svg" alt="">
+    </a>
+  </div>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="offer-form">
+    <div>
+      <mat-form-field>
+        <mat-label>Country of Residence</mat-label>
+        <select matNativeControl formControlName="countryControl" (change)="onCountrySelected($event)">
+          <option value="">Please select</option>
+          <option *ngFor="let country of countries" [value]="country.countryCode">{{ country.countryName }}</option>
+        </select>
+        <mat-error *ngIf="myForm.get('countryControl')?.hasError('required')">
+          Country of residence is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field [hidden]="!isAU">
+        <mat-label>State</mat-label>
+        <select matNativeControl formControlName="stateControl">
+          <option *ngFor="let state of states" [value]="state.value">{{ state.display }}</option>
+        </select>
+        <mat-error *ngIf="myForm.get('stateControl')?.hasError('required')">
+          State you reside in is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field [hidden]="!isAU" class="form-full-width">
+        <mat-label>Postcode *</mat-label>
+        <input matInput formControlName="postcodeControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="myForm.get('postcodeControl')?.hasError('required')">
+          Postcode is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="form-full-width">
+        <mat-label>Full Name *</mat-label>
+        <input matInput formControlName="fullNameControl" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="myForm.get('fullNameControl')?.hasError('required')">
+          Full Name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="pull-right">
+      <button type="reset" (click)="onReset()" mat-raised-button color="primary">Reset</button>
+      <button type="submit" [disabled]="myForm.invalid" mat-raised-button color="primary">Submit</button>
+    </div>
+    <div *ngIf="offer">
+      <pre>{{ offer | json }}</pre>
+    </div>
+  </form>
+</div>

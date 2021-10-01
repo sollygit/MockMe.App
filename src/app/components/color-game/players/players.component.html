@@ -1,0 +1,17 @@
+<div class='name-form'>
+  <h1>Players</h1>
+  <mat-form-field>
+    <input matInput placeholder="Name" autocomplete="off" (keydown.enter)=addPlayer(player) [(ngModel)]='player'>
+  </mat-form-field>
+  <button mat-mini-fab color='primary' (click)=addPlayer(player)>
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<mat-chip-list>
+  <div *ngFor='let p of players'>
+    <mat-chip color='accent' selected (click)=removePlayer(p) title='Remove Player "{{ p }}"?'>
+      {{ p }}
+      <mat-icon matChipRemove (click)=removePlayer(p) title='Remove Player "{{ p }}"?'>cancel</mat-icon>
+    </mat-chip>
+  </div>
+</mat-chip-list>

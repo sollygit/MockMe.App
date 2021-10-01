@@ -1,0 +1,39 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+    <mat-icon>home</mat-icon><span class="nav-caption">Home</span>
+  </a>
+  <a mat-list-item routerLink="/products" (click)="onSidenavClose()">
+    <mat-icon>view_list</mat-icon><span class="nav-caption">Products</span>
+  </a>
+  <a mat-list-item routerLink="/trades" (click)="onSidenavClose()">
+    <mat-icon>trending_up</mat-icon><span class="nav-caption">Trades</span>
+  </a>
+  <a mat-list-item routerLink="/offer" (click)="onSidenavClose()">
+    <mat-icon>description</mat-icon><span class="nav-caption">Offer</span>
+  </a>
+  <a mat-list-item routerLink="/play" (click)="onSidenavClose()">
+    <mat-icon>gamepad</mat-icon><span class="nav-caption">Play</span>
+  </a>
+  <a mat-list-item [matMenuTriggerFor]="files">
+    <mat-icon>cloud_upload</mat-icon><span class="nav-caption">Upload</span>
+  </a>
+  <a mat-list-item [matMenuTriggerFor]="settings">
+    <mat-icon>settings</mat-icon><span class="nav-caption">Settings</span>
+  </a>
+  <mat-menu #files="matMenu">
+    <button mat-menu-item routerLink="/student" (click)="onSidenavClose()">
+      <mat-icon>upload</mat-icon><span class="nav-caption">Single</span>
+    </button>
+    <button mat-menu-item routerLink="/student/multiple" (click)="onSidenavClose()">
+      <mat-icon>upload</mat-icon><span class="nav-caption">Multiple</span>
+    </button>
+  </mat-menu>
+  <mat-menu #settings="matMenu">
+    <button mat-menu-item routerLink="/notifications" (click)="onSidenavClose()">
+      <mat-icon>notification_important</mat-icon><span class="nav-caption">Notifications</span>
+    </button>
+    <button mat-menu-item routerLink="/configurations" (click)="onSidenavClose()">
+      <mat-icon>manage_accounts</mat-icon><span class="nav-caption">Configurations</span>
+    </button>
+  </mat-menu>
+</mat-nav-list>

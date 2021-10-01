@@ -1,0 +1,35 @@
+<div class="component">
+  <h3>Student #{{ studentId }}, Form #{{ formId }}</h3>
+  <div class="my-2">
+    <label class="btn btn-primary" (click)="fileInput.value = ''">
+      Choose File
+      <input #fileInput type="file" accept=".pdf" style="display: none" (change)="chooseFile(fileInput.files)" />
+    </label>
+  </div>
+  <div *ngIf="selectedFile">
+    <pre>[{{ selectedFile.name }} - {{ configurations.humanFileSize(selectedFile.size) }}]</pre>
+    <button type="button" class="btn btn-primary" (click)="fileUpload()" [disabled]="uploading">
+      <span *ngIf="!uploading">Upload</span>
+      <span *ngIf="uploading"><loading-bar>Processing...</loading-bar></span>
+    </button>
+    <div *ngIf="uploading" class="mt-3">
+      <ngb-progressbar type="success" [showValue]="true" [value]="uploadProgress"></ngb-progressbar>
+    </div>
+  </div>
+
+  <div *ngIf="errorMsg" class="text-danger">
+    {{ errorMsg }}
+  </div>
+  
+  <div *ngIf="submissionResult" class="text-success mt-3">
+    <p class="font-weight-bold mb-0">File uploaded</p>
+    <pre>{{ submissionResult | json }}</pre>
+  </div>
+
+  <hr />
+  <h3>Download a File from an API Endpoint</h3>
+  <div class="my-2">
+    <a href="{{ link }}" download>Download File</a>
+  </div>
+
+</div>

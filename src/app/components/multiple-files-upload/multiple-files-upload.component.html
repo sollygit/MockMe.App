@@ -1,0 +1,35 @@
+<div class="component">
+  <h3>Upload Multiple Files</h3>
+
+  <div class="my-2">
+    <label class="btn btn-primary" (click)="fileInput.value = ''">
+      Choose Files
+      <input #fileInput type="file" style="display: none" (change)="chooseFile(fileInput.files)" multiple />
+    </label>
+  </div>
+
+  <div *ngIf="selectedFiles && selectedFiles.length">
+    <ul *ngFor="let item of selectedFiles">
+      <li>
+        <pre>[{{ item.name }} - {{ configurations.humanFileSize(item.size) }}]</pre>
+      </li>
+    </ul>
+    <div *ngIf="uploading" class="mt-2">
+      <ngb-progressbar type="success" [showValue]="true" [value]="uploadProgress"></ngb-progressbar>
+    </div>
+    <button type="button" class="btn btn-primary mt-2" (click)="multiUploads()" [disabled]="uploading">
+      <span *ngIf="!uploading">Upload</span>
+      <span *ngIf="uploading"><loading-bar>Processing...</loading-bar></span>
+    </button>
+  </div>
+
+  <div *ngIf="errorMsg" class="text-danger">
+    {{ errorMsg }}
+  </div>
+
+  <div *ngIf="submissionResults && submissionResults.length" class="text-success">
+    <p class="font-weight-bold mb-0">File uploaded</p>
+    <pre>{{ submissionResults | json }}</pre>
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+h1 {
+  font-size: 2rem;
+}
+
+mat-chip {
+  cursor: pointer;
+  
+  &:hover {
+      filter: opacity(.8);
+  }
+}
+
+.name-form {
+  padding-right: 1rem;
+  padding-top: 2rem;
+  width: 350px;
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Generic Metal Table",
+    "description": "Unde animi aut. Et error repellat ea sunt autem quam. Dolor quo ut id veritatis eligendi harum voluptates qui quia. Veritatis perferendis est quis qui. Aut omnis ab praesentium aut eum officiis eligendi. Aut rerum aut possimus.",
+    "price": "720.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Generic Metal Table",
+    "quantity": 86085
+  },
+  {
+    "id": 2,
+    "name": "Rustic Soft Chair",
+    "description": "Earum consequatur sed sapiente vel nulla facilis ut ea. Ut quo deserunt harum. Aut necessitatibus dolores quis quis accusamus esse qui fuga.",
+    "price": "201.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Rustic Soft Chair",
+    "quantity": 27942
+  },
+  {
+    "id": 3,
+    "name": "Small Fresh Computer",
+    "description": "Perspiciatis neque consequatur mollitia porro sunt deserunt corrupti. Quo ex quia voluptate. Dignissimos et non. Aut minima illum numquam id modi aliquid earum.",
+    "price": "318.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Small Fresh Computer",
+    "quantity": 57778
+  },
+  {
+    "id": 4,
+    "name": "Small Soft Table",
+    "description": "Hic magnam omnis ipsa sint sunt hic inventore. Itaque perspiciatis labore doloremque rerum est et omnis quis. Libero quasi iusto id deleniti beatae. Commodi dolor neque nostrum aut ab fugit consequatur occaecati.",
+    "price": "303.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Small Soft Table",
+    "quantity": 82995
+  },
+  {
+    "id": 5,
+    "name": "Refined Metal Sausages",
+    "description": "Quidem qui et aliquid inventore. Nesciunt et unde fugit iste exercitationem at sed commodi ut. Velit quaerat commodi quasi. In consequatur ut labore dignissimos eaque sunt delectus aliquam. Nam maiores rerum aut assumenda.",
+    "price": "155.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Refined Metal Sausages",
+    "quantity": 25444
+  },
+  {
+    "id": 6,
+    "name": "Generic Granite Soap",
+    "description": "Dolor autem impedit voluptatum qui tempore vitae tempora sint. Sint inventore ipsum id aut id enim. Ducimus eos iure deleniti beatae nostrum. Quam consequuntur eos quia ex omnis hic quisquam. Magni id asperiores velit est qui.",
+    "price": "751.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Generic Granite Soap",
+    "quantity": 47202
+  },
+  {
+    "id": 7,
+    "name": "Handcrafted Wooden Salad",
+    "description": "Et eum quis et in quisquam in reprehenderit veritatis quidem. Reiciendis dolorem veritatis beatae tempora. Ullam ut reiciendis nemo quasi veniam sed eaque sed. Aut pariatur error tenetur maiores eius nemo accusantium non corporis.",
+    "price": "829.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Handcrafted Wooden Salad",
+    "quantity": 14753
+  },
+  {
+    "id": 8,
+    "name": "Awesome Cotton Pants",
+    "description": "Et ipsum incidunt in id repellat vero quaerat. Et minus magnam saepe aut sed necessitatibus eum. Quos architecto vitae eum incidunt porro nisi optio qui. Incidunt eveniet accusantium molestias. Sit quisquam sint repellat quas dolore quo dolor.",
+    "price": "728.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Awesome Cotton Pants",
+    "quantity": 28219
+  },
+  {
+    "id": 9,
+    "name": "Incredible Wooden Car",
+    "description": "Necessitatibus vero maiores ducimus omnis sed illum qui qui. Voluptas et nostrum provident veritatis repudiandae placeat.",
+    "price": "117.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Incredible Wooden Car",
+    "quantity": 42386
+  },
+  {
+    "id": 10,
+    "name": "Tasty Soft Sausages",
+    "description": "Error eos recusandae quisquam. Similique laboriosam animi sit omnis officiis sit tenetur consequatur voluptatem.",
+    "price": "769.00",
+    "imageUrl": "https://source.unsplash.com/1600x900/?Tasty Soft Sausages",
+    "quantity": 44136
+  }
+]

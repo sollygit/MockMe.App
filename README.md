@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
-## Development server:
+## Development Server:
 
 - http://localhost:4200/home?_page=1&_limit=3
 - http://localhost:3000/product?_page=1&_limit=3

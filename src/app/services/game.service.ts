@@ -47,6 +47,7 @@ export class GameService {
 
   setWinningColor(color: string) {
     this.winningColor = color;
+    console.log(this.winningColor);
     this.changeState('playingGame');
   }
 

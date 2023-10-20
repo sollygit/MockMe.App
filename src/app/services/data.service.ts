@@ -32,7 +32,7 @@ export class DataService {
   }
 
   public getProducts() {
-    return this.httpClient.get<any[]>('assets/products.txt');
+    return this.httpClient.get<any[]>('assets/products.json');
   }
 
   public getTemplates() {
@@ -40,7 +40,7 @@ export class DataService {
   }
 
   public fetchRequest() {
-    return this.httpClient.get('assets/notification-request.txt');
+    return this.httpClient.get('assets/notification-request.json');
   }
 
   public sendNotification(request: string) {

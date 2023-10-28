@@ -11,7 +11,7 @@ import { DataService, SubmissionResult } from 'src/app/services/data.service';
 })
 export class StudentFormsComponent implements OnInit {
   fileUploadUrl = `${this.configurations.restUrl}/api/Student`;
-  link = `${this.configurations.restUrl}/api/Student/files/yyyyMMdd-HHmm`;
+  link = `${this.configurations.restUrl}/api/Student/files/example-file`;
   studentId = 9998;
   formId = 101;
   uploadProgress = 0;

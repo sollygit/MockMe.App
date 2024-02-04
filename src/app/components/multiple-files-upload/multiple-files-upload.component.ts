@@ -10,8 +10,8 @@ import { DataService, SubmissionResult } from 'src/app/services/data.service';
   styleUrls: ['./multiple-files-upload.component.scss']
 })
 export class MultipleFilesUploadComponent implements OnInit {
-  fileUploadUrl = `${this.configurations.restUrl}/api/Student`;
-  studentId = 77;
+  fileUploadUrl = `${this.configurations.restUrl}/api/file`;
+  fileId = 8888;
   uploadProgress = 0;
   selectedFiles!: File[];
   uploading = false;
@@ -42,7 +42,7 @@ export class MultipleFilesUploadComponent implements OnInit {
       this.errorMsg = 'Please choose a file.';
       return;
     }
-    const formData = this.getFormData(this.studentId, this.selectedFiles);
+    const formData = this.getFormData(this.fileId, this.selectedFiles);
     this.uploading = true;
     this.dataService.multiUploads(formData)
     .pipe(finalize(() => {
@@ -58,9 +58,9 @@ export class MultipleFilesUploadComponent implements OnInit {
     });
   }
 
-  getFormData(studentId:number, files:File[]) {
+  getFormData(fileId:number, files:File[]) {
     const formData = new FormData();
-    formData.append('studentId', studentId.toString());
+    formData.append('fileId', fileId.toString());
     files.forEach((f) => formData.append('files', f));
     return formData;
   }

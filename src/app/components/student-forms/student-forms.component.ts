@@ -10,10 +10,10 @@ import { DataService, SubmissionResult } from 'src/app/services/data.service';
   styleUrls: ['./student-forms.component.scss']
 })
 export class StudentFormsComponent implements OnInit {
-  fileUploadUrl = `${this.configurations.restUrl}/api/Student`;
-  link = `${this.configurations.restUrl}/api/Student/files/example-file`;
-  studentId = 9998;
-  formId = 101;
+  fileUploadUrl = `${this.configurations.restUrl}/api/file`;
+  link = `${this.fileUploadUrl}/contoso.pdf`;
+  fileId = 9998;
+  templateId = 101;
   uploadProgress = 0;
   selectedFile: any;
   uploading = false;
@@ -43,7 +43,7 @@ export class StudentFormsComponent implements OnInit {
       this.errorMsg = 'Please choose a file.';
       return;
     }
-    const formData = this.getFormData(this.selectedFile, this.studentId, this.formId, this.courses);
+    const formData = this.getFormData(this.selectedFile, this.fileId, this.templateId, this.courses);
     this.uploading = true;
     this.dataService.fileUpload(formData)
       .pipe(finalize(() => {
@@ -61,11 +61,11 @@ export class StudentFormsComponent implements OnInit {
       );
   }
 
-  getFormData(file:File, studentId:number, formId:number, courses:string[]) {
+  getFormData(file:File, fileId:number, templateId:number, courses:string[]) {
     const formData = new FormData();
-    formData.append('studentFile', file);
-    formData.append('formId', formId.toString());
-    formData.append('studentId', studentId.toString());
+    formData.append('templateFile', file);
+    formData.append('fileId', fileId.toString());
+    formData.append('templateId', templateId.toString());
     courses.forEach((c) => { formData.append('courses', c); });
     return formData;
   }

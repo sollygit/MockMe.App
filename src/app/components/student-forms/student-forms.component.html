@@ -1,5 +1,5 @@
 <div class="component">
-  <h3>Student #{{ studentId }}, Form #{{ formId }}</h3>
+  <h3>File #{{ fileId }}, Form #{{ templateId }}</h3>
   <div class="my-2">
     <label class="btn btn-primary" (click)="fileInput.value = ''">
       Choose File
@@ -27,7 +27,7 @@
   </div>
 
   <hr />
-  <h3>Download a File from an API Endpoint</h3>
+  <h3>File download from an API endpoint</h3>
   <div class="my-2">
     <a href="{{ link }}" download>Download File</a>
   </div>

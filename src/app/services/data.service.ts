@@ -6,8 +6,8 @@ import { Product } from '../types/product.type';
 import { Country } from '../types/country.type';
 
 export interface SubmissionResult {
-  studentId: number;
-  formId: number;
+  fileId: number;
+  templateId: number;
   fileName: string;
   fileSize: number;
 }
@@ -16,7 +16,7 @@ export interface SubmissionResult {
 export class DataService {
   private productUrl = `${this.configurations.restUrl}/api/mock/product`;
   private countryUrl = `${this.configurations.restUrl}/api/mock/country`;
-  private fileUploadUrl = `${this.configurations.restUrl}/api/student`;
+  private fileUploadUrl = `${this.configurations.restUrl}/api/file`;
   private templatesUrl = `${this.configurations.notificationUrl}/api/notification/template`;
   private notificationUrl = `${this.configurations.notificationUrl}/api/notification/send`;
 
@@ -85,20 +85,20 @@ export class DataService {
   }
 
   public fileUpload(formData: FormData) {
-    const studentId = formData.get('studentId');
+    const fileId = formData.get('fileId');
     return this.httpClient.request<SubmissionResult>(
       new HttpRequest(
-        'POST', `${this.fileUploadUrl}/${studentId}/form`,
+        'POST', `${this.fileUploadUrl}/${fileId}/upload`,
         formData, { reportProgress: true }
       ) 
     );
   }
 
   public multiUploads(formData: FormData) {
-    const studentId = formData.get('studentId');
+    const fileId = formData.get('fileId');
     return this.httpClient.request<SubmissionResult[]>(
       new HttpRequest(
-        'POST', `${this.fileUploadUrl}/${studentId}/forms`,
+        'POST', `${this.fileUploadUrl}/${fileId}/uploads`,
         formData, { reportProgress: true }
       ) 
     );

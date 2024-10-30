@@ -17,7 +17,7 @@ export class DataService {
   private productUrl = `${this.configurations.restUrl}/api/mock/product`;
   private countryUrl = `${this.configurations.restUrl}/api/mock/country`;
   private fileUploadUrl = `${this.configurations.restUrl}/api/file`;
-  private templatesUrl = `${this.configurations.notificationUrl}/api/notification/template`;
+  private templatesUrl = `${this.configurations.notificationUrl}`;
   private notificationUrl = `${this.configurations.notificationUrl}/api/notification/send`;
 
   public first = '';

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   restUrl: 'https://localhost:44389',
-  notificationUrl: 'https://notification-ati.azurewebsites.net'
+  notificationUrl: 'https://my-json-server.typicode.com/sollygit/notification.api/templates'
 };
 
 /*

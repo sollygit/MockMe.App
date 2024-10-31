@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 export class ConfigurationService {
   public static readonly appVersion: string = "1.0.1";
   public restUrl = environment.restUrl;
+  public templateUrl = environment.templateUrl;
   public notificationUrl = environment.notificationUrl;
   readonly colors: string[] = ['maroon', 'red', 'orange', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
 

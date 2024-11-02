@@ -1,0 +1,23 @@
+<div class="container">
+  <div>
+    <table *ngIf="items" class="table table-bordred table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Original Url</th>
+          <th>Short Url</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>
+            <a href="javascript:;" class="vertical-mid">{{ item.code }}</a>
+          </td>
+          <td>{{ item.longUrl }}</td>
+          <td>{{ item.shortUrl }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h6 *ngIf="!loading && items == null" class="text-muted">Something went wrong, please try again later...</h6>
+  </div>
+</div>

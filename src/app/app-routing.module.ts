@@ -11,6 +11,7 @@ import { TradesComponent } from './components/trades/trades.component';
 import { StudentFormsComponent } from './components/student-forms/student-forms.component';
 import { MultipleFilesUploadComponent } from './components/multiple-files-upload/multiple-files-upload.component';
 import { ConfigurationsComponent } from './components/configurations/configurations.component';
+import { ShortenedLinksComponent } from './components/shortened-links/shortened-links.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'file/multiple', component: MultipleFilesUploadComponent, canActivate: [AuthGuard] },
   { path: 'offer', component: OfferComponent, canActivate: [AuthGuard] },
   { path: 'play', component: GameBoardComponent },
+  { path: 'shortly', component: ShortenedLinksComponent },
   { path: 'notifications', component: NotificationsComponent, canActivate: [AuthGuard] },
   { path: 'configurations', component: ConfigurationsComponent },
   { path: '**', redirectTo: '' }

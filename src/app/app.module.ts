@@ -30,6 +30,7 @@ import { GameBoardComponent } from './components/color-game/game-board/game-boar
 import { ColorBlockComponent } from './components/color-game/color-block/color-block.component';
 import { InstructionsComponent } from './components/color-game/instructions/instructions.component';
 import { PlayersComponent } from './components/color-game/players/players.component';
+import { ShortenedLinksComponent } from './components/shortened-links/shortened-links.component';
 
 import { BooleanPipe } from './pipes/boolean.pipe';
 import { ConfigurationService } from './services/configuration.service';
@@ -37,6 +38,7 @@ import { DataService } from './services/data.service';
 import { DBStorageService } from './services/db-storage.service';
 import { GameService } from './services/game.service';
 import { TradeService } from './services/trade.service';
+import { ShortenerService } from './services/shortener.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { TradeService } from './services/trade.service';
     MultipleFilesUploadComponent,
     ColorBlockComponent,
     GameBoardComponent,
+    ShortenedLinksComponent,
     InstructionsComponent,
     PlayersComponent,
     ConfigurationsComponent,
@@ -79,7 +82,8 @@ import { TradeService } from './services/trade.service';
     DataService,
     TradeService,
     DBStorageService,
-    GameService
+    GameService,
+    ShortenerService
   ],
   bootstrap: [AppComponent]
 })

@@ -7,6 +7,7 @@ export class ConfigurationService {
   public restUrl = environment.restUrl;
   public templateUrl = environment.templateUrl;
   public notificationUrl = environment.notificationUrl;
+  public baseUrl = environment.baseUrl;
   readonly colors: string[] = ['maroon', 'red', 'orange', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
 
   get randomColor() {

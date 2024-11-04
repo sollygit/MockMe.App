@@ -12,6 +12,8 @@ import { StudentFormsComponent } from './components/student-forms/student-forms.
 import { MultipleFilesUploadComponent } from './components/multiple-files-upload/multiple-files-upload.component';
 import { ConfigurationsComponent } from './components/configurations/configurations.component';
 import { ShortenedLinksComponent } from './components/shortened-links/shortened-links.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { MovieComponent } from './components/movie/movie.component';
 
 const routes: Routes = [
   {
@@ -28,6 +30,8 @@ const routes: Routes = [
   { path: 'offer', component: OfferComponent, canActivate: [AuthGuard] },
   { path: 'play', component: GameBoardComponent },
   { path: 'shortly', component: ShortenedLinksComponent },
+  { path: 'starwars', component: MoviesComponent },
+  { path: "starwars/:provider/:id", component: MovieComponent },
   { path: 'notifications', component: NotificationsComponent, canActivate: [AuthGuard] },
   { path: 'configurations', component: ConfigurationsComponent },
   { path: '**', redirectTo: '' }

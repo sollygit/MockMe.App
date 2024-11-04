@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { ShortenedUrl } from 'src/app//types/shortened-url.type'
-import { ConfigurationService } from './configuration.service';
+import { ShortenedUrl } from 'src/app/types/shortened-url.type'
+import { ConfigurationService } from 'src/app/services/configuration.service';
 
 @Injectable()
 export class ShortenerService {

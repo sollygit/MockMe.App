@@ -7,8 +7,11 @@ export const environment = {
   appVersion: "1.0.2",
   restUrl: 'https://localhost:44389',
   shortenerUrl: "https://localhost:44393",
+  starwarsUrl: "https://localhost:44393",
   templateUrl: 'https://my-json-server.typicode.com/sollygit/notification.api/templates',
-  notificationUrl: 'https://test-serviceapi.fbnzd.co.nz/tmsnotification/100/send'
+  notificationUrl: 'https://test-serviceapi.fbnzd.co.nz/tmsnotification/100/send',
+  cinemaWorld: "CinemaWorld",
+  filmWorld: "FilmWorld"
 };
 
 /*

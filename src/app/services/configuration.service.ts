@@ -6,8 +6,11 @@ export class ConfigurationService {
   public appVersion = environment.appVersion;
   public restUrl = environment.restUrl;
   public shortenerUrl = environment.shortenerUrl;
+  public starwarsUrl = environment.starwarsUrl;
   public templateUrl = environment.templateUrl;
   public notificationUrl = environment.notificationUrl;
+  public cinemaWorld = environment.cinemaWorld;
+  public filmWorld = environment.filmWorld;
   readonly colors: string[] = ['maroon', 'red', 'orange', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
 
   get randomColor() {
@@ -22,6 +25,10 @@ export class ConfigurationService {
   }
   get directions() {
     return this._directions;
+  }
+
+  get providers() {
+    return this._providers;
   }
 
   private stateList = [
@@ -40,6 +47,11 @@ export class ConfigurationService {
   private _directions = [
     { value: 1, display: "UP" },
     { value: 2, display: "DOWN" }
+  ];
+
+  private _providers = [
+    { value: this.cinemaWorld, display: this.cinemaWorld },
+    { value: this.filmWorld, display: this.cinemaWorld }
   ];
 
   speak(message: string) {

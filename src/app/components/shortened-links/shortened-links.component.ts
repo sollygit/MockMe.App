@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShortenedUrl } from 'src/app//types/shortened-url.type';
+import { ConfigurationService } from 'src/app/services/configuration.service';
 import { ShortenerService } from 'src/app/services/shortener.service';
 
 @Component({
@@ -8,10 +9,12 @@ import { ShortenerService } from 'src/app/services/shortener.service';
   styleUrls: ['./shortened-links.component.css']
 })
 export class ShortenedLinksComponent implements OnInit {
+  shortenerUrl = this.configService.shortenerUrl;
+  appVersion = this.configService.appVersion;
   loading = false;
   public items: ShortenedUrl[] = [];
 
-  constructor(private shortenerService: ShortenerService) {
+  constructor(private shortenerService: ShortenerService, private configService: ConfigurationService) {
   }
 
   ngOnInit(): void {

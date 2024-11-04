@@ -1,23 +1,33 @@
-<div class="container">
-  <div>
-    <table *ngIf="items" class="table table-bordred table-striped table-hover">
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Original Url</th>
-          <th>Short Url</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of items">
-          <td>
-            <a href="javascript:;" class="vertical-mid">{{ item.code }}</a>
-          </td>
-          <td>{{ item.longUrl }}</td>
-          <td>{{ item.shortUrl }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <h6 *ngIf="!loading && items == null" class="text-muted">Something went wrong, please try again later...</h6>
+<section class="container">
+  <div class="card mt-4 shadow">
+    <h4 class="card-header">
+      <a href="{{ shortenerUrl }}" target="_blank">URL Shortener API</a>
+    </h4>
+    <div class="card-body">
+      <div class="m-2">
+        <table *ngIf="items" class="table table-bordred table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Original Url</th>
+              <th>Short Url</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items">
+              <td>
+                <a href="javascript:;" class="vertical-mid">{{ item.code }}</a>
+              </td>
+              <td>{{ item.longUrl }}</td>
+              <td>{{ item.shortUrl }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <h6 *ngIf="!loading && items == null" class="text-muted">Something went wrong, please try again later...</h6>
+      </div>
+      <div class="m-2">
+        <h6>App v.{{ appVersion }}</h6>
+      </div>
+    </div>
   </div>
-</div>
+</section>

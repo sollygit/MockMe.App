@@ -8,7 +8,7 @@ import { ConfigurationService } from './configuration.service';
 export class ShortenerService {
   private readonly _getAll: string = "/api/urlshortener";
 
-  public get getAllUrl() { return this.configurations.baseUrl + this._getAll; }
+  public get getAllUrl() { return this.configurations.shortenerUrl + this._getAll; }
 
   constructor(private http: HttpClient, private configurations: ConfigurationService) {
   }

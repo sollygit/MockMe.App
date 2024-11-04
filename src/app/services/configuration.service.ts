@@ -3,11 +3,11 @@ import { environment } from 'src/environments/environment';
 
   @Injectable()
 export class ConfigurationService {
-  public static readonly appVersion: string = "1.0.1";
+  public appVersion = environment.appVersion;
   public restUrl = environment.restUrl;
+  public shortenerUrl = environment.shortenerUrl;
   public templateUrl = environment.templateUrl;
   public notificationUrl = environment.notificationUrl;
-  public baseUrl = environment.baseUrl;
   readonly colors: string[] = ['maroon', 'red', 'orange', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
 
   get randomColor() {

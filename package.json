@@ -10,6 +10,9 @@
     "generate": "node ./server/generate.js > ./server/database.json",
     "server": "json-server --watch ./server/database.json"
   },
+  "engines": {
+    "node": "14.21.3"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^12.2.17",

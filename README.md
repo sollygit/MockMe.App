@@ -1,8 +1,6 @@
-## [URL Shortener Angular Demo](https://mockme.azurewebsites.net/shortly)
+## [MockMe App](https://polite-hill-064b7ff00.4.azurestaticapps.net)
 
-# MockMe App
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
+This front-end app is an Azure Static Web App 
 
 ## Development Server:
 
@@ -12,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### Azure (front/back): 
 
-- https://mockme.azurewebsites.net
+- https://polite-hill-064b7ff00.4.azurestaticapps.net
 - https://mockme-api.azurewebsites.net
 
 ![image](https://user-images.githubusercontent.com/30820950/85117210-dd254300-b261-11ea-94a5-ee55ff02fd1f.png)

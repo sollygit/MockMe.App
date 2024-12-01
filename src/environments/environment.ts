@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   appVersion: "1.0.2",
   restUrl: 'https://localhost:44389',
-  shortenerUrl: "https://localhost:44393",
+  shortenerUrl: "https://localhost:44391",
   starwarsUrl: "https://localhost:44393",
   templateUrl: 'https://my-json-server.typicode.com/sollygit/notification.api/templates',
   notificationUrl: 'https://test-serviceapi.fbnzd.co.nz/tmsnotification/100/send',

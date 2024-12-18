@@ -11,7 +11,7 @@ import { DataService, SubmissionResult } from 'src/app/services/data.service';
 })
 export class StudentFormsComponent implements OnInit {
   fileUploadUrl = `${this.configurations.restUrl}/api/file`;
-  link = `${this.fileUploadUrl}/contoso.pdf`;
+  link = `${this.fileUploadUrl}/e-ticket.pdf`;
   fileId = 9998;
   templateId = 101;
   uploadProgress = 0;

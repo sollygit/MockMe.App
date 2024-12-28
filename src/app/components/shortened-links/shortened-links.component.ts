@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShortenedUrl } from 'src/app//types/shortened-url.type';
+import { ShortenedUrl } from 'src/app/types/shortened-url.type';
 import { ConfigurationService } from 'src/app/services/configuration.service';
 import { ShortenerService } from 'src/app/services/shortener.service';
 

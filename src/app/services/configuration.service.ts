@@ -7,7 +7,6 @@ export class ConfigurationService {
   public restUrl = environment.restUrl;
   public shortenerUrl = environment.shortenerUrl;
   public starwarsUrl = environment.starwarsUrl;
-  public productsUrl = environment.productsUrl;
   public cinemaWorld = 'CinemaWorld';
   public filmWorld = 'FilmWorld';
   readonly colors: string[] = ['maroon', 'red', 'orange', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];

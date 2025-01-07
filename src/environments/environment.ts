@@ -7,6 +7,5 @@ export const environment = {
   appVersion: "1.0.2",
   restUrl: 'https://localhost:44389',
   shortenerUrl: "https://localhost:44391",
-  starwarsUrl: "https://localhost:44393",
-  productsUrl: 'https://my-json-server.typicode.com/sollygit/mockme.api/products'
+  starwarsUrl: "https://localhost:44393"
 };

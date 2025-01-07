@@ -24,21 +24,17 @@ export class MoviesComponent implements OnInit {
     this.getMovies(this.config.cinemaWorld);
   }
 
-  toggleLoading(isCompleted: boolean) {
-    this.loading = !isCompleted;
-  }
-
   getMovies(provider: string) {
     this.movieService.getAll(provider)
       .subscribe(movies => {
         movies.map(m => m.id = m.id.toUpperCase());
         this.movies = movies;
-        this.toggleLoading(true);
+        this.loading = false;
       },
         error => {
           console.log(error);
           this.movies = [];
-          this.toggleLoading(true);
+          this.loading = true
         });
   }
 

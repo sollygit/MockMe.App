@@ -23,8 +23,8 @@
   <a mat-list-item [matMenuTriggerFor]="files">
     <mat-icon>cloud_upload</mat-icon><span class="nav-caption">File Upload</span>
   </a>
-  <a mat-list-item [matMenuTriggerFor]="settings">
-    <mat-icon>settings</mat-icon><span class="nav-caption">Settings</span>
+  <a mat-list-item routerLink="/profile" (click)="onSidenavClose()">
+    <mat-icon>manage_accounts</mat-icon><span class="nav-caption">Profile</span>
   </a>
   <mat-menu #files="matMenu">
     <button mat-menu-item routerLink="/file" (click)="onSidenavClose()">
@@ -32,14 +32,6 @@
     </button>
     <button mat-menu-item routerLink="/file/multiple" (click)="onSidenavClose()">
       <mat-icon>upload</mat-icon><span class="nav-caption">Multiple Files</span>
-    </button>
-  </mat-menu>
-  <mat-menu #settings="matMenu">
-    <button mat-menu-item routerLink="/notifications" (click)="onSidenavClose()">
-      <mat-icon>notification_important</mat-icon><span class="nav-caption">Notifications</span>
-    </button>
-    <button mat-menu-item routerLink="/configurations" (click)="onSidenavClose()">
-      <mat-icon>manage_accounts</mat-icon><span class="nav-caption">Configurations</span>
     </button>
   </mat-menu>
 </mat-nav-list>

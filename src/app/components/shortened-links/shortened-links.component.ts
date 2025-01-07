@@ -11,7 +11,7 @@ import { ShortenerService } from 'src/app/services/shortener.service';
 export class ShortenedLinksComponent implements OnInit {
   shortenerUrl = this.configService.shortenerUrl;
   appVersion = this.configService.appVersion;
-  loading = false;
+  loading = true;
   public items: ShortenedUrl[] = [];
 
   constructor(private shortenerService: ShortenerService, private configService: ConfigurationService) {
@@ -21,21 +21,17 @@ export class ShortenedLinksComponent implements OnInit {
     this.getAll();
   }
 
-  toggleLoading(isCompleted: boolean) {
-    this.loading = !isCompleted;
-  }
-
   getAll() {
     this.shortenerService.getAll()
       .subscribe(items => {
         items.map(m => m.code = m.code.toUpperCase());
         this.items = items;
-        this.toggleLoading(true);
+        this.loading = false;
       },
         error => {
           console.log(error);
           this.items = [];
-          this.toggleLoading(true);
+          this.loading = true;
         });
   }
 

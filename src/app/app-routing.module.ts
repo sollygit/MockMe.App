@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { NotificationsComponent } from './components/notifications/notifications.component';
 import { ProductsComponent } from './components/products/products.component';
 import { OfferComponent } from './components/offer/offer.component';
 import { GameBoardComponent } from './components/color-game/game-board/game-board.component';
@@ -16,12 +15,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    component: HomeComponent,
-    canActivate: [AuthGuard]
-  },
+  { path: '', pathMatch: 'full', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
   { path: 'trades', component: TradesComponent, canActivate: [AuthGuard] },
@@ -32,8 +26,7 @@ const routes: Routes = [
   { path: 'shortly', component: ShortenedLinksComponent },
   { path: 'starwars', component: MoviesComponent },
   { path: "starwars/:provider/:id", component: MovieComponent },
-  { path: 'notifications', component: NotificationsComponent, canActivate: [AuthGuard] },
-  { path: 'configurations', component: ConfigurationsComponent },
+  { path: 'profile', component: ConfigurationsComponent },
   { path: '**', redirectTo: '' }
 ];
 

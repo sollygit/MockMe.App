@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams, HttpHeaders, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpRequest } from '@angular/common/http';
 import { retry, tap } from 'rxjs/operators';
 import { ConfigurationService } from '../services/configuration.service';
 import { Product } from '../types/product.type';
@@ -17,9 +17,7 @@ export class DataService {
   private productUrl = `${this.configurations.restUrl}/api/mock/product`;
   private countryUrl = `${this.configurations.restUrl}/api/mock/country`;
   private fileUploadUrl = `${this.configurations.restUrl}/api/file`;
-  private templatesUrl = `${this.configurations.templateUrl}`;
-  private notificationUrl = `${this.configurations.notificationUrl}`;
-
+  
   public first = '';
   public prev = '';
   public next = '';
@@ -33,19 +31,6 @@ export class DataService {
 
   public getProducts() {
     return this.httpClient.get<any[]>('assets/products.json');
-  }
-
-  public getTemplates() {
-    return this.httpClient.get<any[]>(this.templatesUrl);
-  }
-
-  public fetchRequest() {
-    return this.httpClient.get('assets/notification-request.json');
-  }
-
-  public sendNotification(request: string) {
-    const header = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.httpClient.post<string>(this.notificationUrl, request, { headers: header });
   }
 
   public sendGetRequest(page: any, limit: any) {

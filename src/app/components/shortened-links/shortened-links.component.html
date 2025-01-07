@@ -23,7 +23,7 @@
             </tr>
           </tbody>
         </table>
-        <h6 *ngIf="!loading && items == null" class="text-muted">Something went wrong, please try again later...</h6>
+        <h5 *ngIf="loading" class="text-muted">Something went wrong, please try again later...</h5>
       </div>
       <div class="m-2">
         <h6>App v.{{ appVersion }}</h6>

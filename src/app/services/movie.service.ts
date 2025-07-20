@@ -11,7 +11,6 @@ export class MovieService {
 
   public providers: Provider[] = [];
   public get moviesUrl() { return this.configurations.starwarsUrl + this._getAll; }
-  public get movieUrl() { return this.configurations.starwarsUrl + this._getAll; }
 
   constructor(private http: HttpClient, private configurations: ConfigurationService) {
     this.initProviders();

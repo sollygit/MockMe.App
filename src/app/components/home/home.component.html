@@ -1,4 +1,4 @@
-<div class="component" *ngIf="authService.user$ | async as user; else login">
+<div class="component">
   <h3>Mocked Products</h3>
   <mat-progress-bar *ngIf="products.length === 0" mode="indeterminate"></mat-progress-bar>
 

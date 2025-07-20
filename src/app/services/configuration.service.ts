@@ -5,7 +5,6 @@ import { environment } from 'src/environments/environment';
 export class ConfigurationService {
   public appVersion = environment.appVersion;
   public restUrl = environment.restUrl;
-  public shortenerUrl = environment.shortenerUrl;
   public starwarsUrl = environment.starwarsUrl;
   public cinemaWorld = 'CinemaWorld';
   public filmWorld = 'FilmWorld';

@@ -29,7 +29,6 @@ import { GameBoardComponent } from './components/color-game/game-board/game-boar
 import { ColorBlockComponent } from './components/color-game/color-block/color-block.component';
 import { InstructionsComponent } from './components/color-game/instructions/instructions.component';
 import { PlayersComponent } from './components/color-game/players/players.component';
-import { ShortenedLinksComponent } from './components/shortened-links/shortened-links.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 
@@ -39,7 +38,6 @@ import { DataService } from './services/data.service';
 import { DBStorageService } from './services/db-storage.service';
 import { GameService } from './services/game.service';
 import { TradeService } from './services/trade.service';
-import { ShortenerService } from './services/shortener.service';
 import { MovieService } from './services/movie.service';
 
 @NgModule({
@@ -56,7 +54,6 @@ import { MovieService } from './services/movie.service';
     MultipleFilesUploadComponent,
     ColorBlockComponent,
     GameBoardComponent,
-    ShortenedLinksComponent,
     MoviesComponent,
     MovieComponent,
     InstructionsComponent,
@@ -86,7 +83,6 @@ import { MovieService } from './services/movie.service';
     TradeService,
     DBStorageService,
     GameService,
-    ShortenerService,
     MovieService
   ],
   bootstrap: [AppComponent]

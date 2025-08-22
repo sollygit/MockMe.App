@@ -29,12 +29,13 @@ export class MoviesComponent implements OnInit {
       .subscribe(movies => {
         movies.map(m => m.id = m.id.toUpperCase());
         this.movies = movies;
+        this.movieService.movies = movies;
         this.loading = false;
       },
         error => {
           console.log(error);
           this.movies = [];
-          this.loading = true
+          this.loading = true;
         });
   }
 

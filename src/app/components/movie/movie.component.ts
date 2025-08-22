@@ -31,12 +31,17 @@ export class MovieComponent implements OnInit {
   getMovie(provider: string, id: string) {
     this.movieService.get(provider, id)
       .subscribe(movie => {
+        // Poulate movie fields from the service
+        let item = this.movieService.getById(id);
+        movie.title = item!.title;
+        movie.year = item!.year;
+        movie.price = item!.price;
+        movie.poster = item!.poster;
         this.movie = movie;
         this.toggleLoading(true);
       },
         error => {
           console.log(error);
-          this.movie = new Movie();
           this.toggleLoading(true);
         });
   }

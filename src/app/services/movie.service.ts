@@ -7,6 +7,7 @@ import { ConfigurationService } from 'src/app//services/configuration.service';
 
 @Injectable()
 export class MovieService {
+  private _movies: Movie[] = [];
   private readonly _getAll: string = "/api/webjet";
 
   public providers: Provider[] = [];
@@ -39,6 +40,18 @@ export class MovieService {
         throw new Error("Something went wrong");
       return response;
     }));
+  }
+
+  public getById(id: string) {
+    return this._movies.find(movie => movie.id === id);
+  }
+
+  get movies(): Movie[] {
+    return this._movies;
+  }
+
+  set movies(value: Movie[]) {
+    this._movies = value;
   }
 
 }

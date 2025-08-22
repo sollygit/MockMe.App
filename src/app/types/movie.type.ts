@@ -5,6 +5,8 @@ export class Movie {
   type!: string;
   poster!: string;
   price!: number;
+  released!: Date;
+  rating!: number;
 
   public constructor(
     fields?: {
@@ -13,7 +15,9 @@ export class Movie {
       year?: string,
       type?: string,
       poster?: string,
-      price?: number
+      price?: number,
+      released?: Date,
+      rating?: number
     }) {
     if (fields) {
       Object.assign(this, fields);

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
 import { JsonComponent } from './components/json/json.component';
 import { OfferComponent } from './components/offer/offer.component';
 import { GameBoardComponent } from './components/color-game/game-board/game-board.component';
@@ -14,14 +13,13 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: '', pathMatch: 'full', component: TradesComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: TradesComponent },
   { path: 'play', component: GameBoardComponent },
   { path: 'json', component: JsonComponent },
   { path: 'starwars', component: MoviesComponent },
   { path: "starwars/:provider/:id", component: MovieComponent },
-  { path: 'trades', component: TradesComponent, canActivate: [AuthGuard] },
   { path: 'offer', component: OfferComponent, canActivate: [AuthGuard] },
   { path: 'file', component: StudentFormsComponent, canActivate: [AuthGuard] },
   { path: 'file/multiple', component: MultipleFilesUploadComponent, canActivate: [AuthGuard] },

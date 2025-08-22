@@ -18,7 +18,7 @@ import { HeaderComponent } from './components/navigation/header/header.component
 import { SidenavComponent } from './components/navigation/sidenav/sidenav.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProductsComponent } from './components/products/products.component';
+import { JsonComponent } from './components/json/json.component';
 import { OfferComponent } from './components/offer/offer.component';
 import { TradesComponent } from './components/trades/trades.component';
 import { StudentFormsComponent } from './components/student-forms/student-forms.component';
@@ -47,7 +47,7 @@ import { MovieService } from './services/movie.service';
     SidenavComponent,
     LoginComponent,
     HomeComponent,
-    ProductsComponent,
+    JsonComponent,
     OfferComponent,
     TradesComponent,
     StudentFormsComponent,

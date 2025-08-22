@@ -29,8 +29,8 @@ export class DataService {
     return this.httpClient.get<Country[]>(this.countryUrl);
   }
 
-  public getProducts() {
-    return this.httpClient.get<any[]>('assets/products.json');
+  public getJsonFile() {
+    return this.httpClient.get<any[]>('assets/movies.json');
   }
 
   public sendGetRequest(page: any, limit: any) {

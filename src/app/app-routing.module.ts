@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProductsComponent } from './components/products/products.component';
+import { JsonComponent } from './components/json/json.component';
 import { OfferComponent } from './components/offer/offer.component';
 import { GameBoardComponent } from './components/color-game/game-board/game-board.component';
 import { TradesComponent } from './components/trades/trades.component';
@@ -15,16 +15,16 @@ import { MovieComponent } from './components/movie/movie.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
-  { path: 'trades', component: TradesComponent, canActivate: [AuthGuard] },
-  { path: 'file', component: StudentFormsComponent, canActivate: [AuthGuard] },
-  { path: 'file/multiple', component: MultipleFilesUploadComponent, canActivate: [AuthGuard] },
-  { path: 'offer', component: OfferComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent },
   { path: 'play', component: GameBoardComponent },
+  { path: 'json', component: JsonComponent },
   { path: 'starwars', component: MoviesComponent },
   { path: "starwars/:provider/:id", component: MovieComponent },
+  { path: 'trades', component: TradesComponent, canActivate: [AuthGuard] },
+  { path: 'offer', component: OfferComponent, canActivate: [AuthGuard] },
+  { path: 'file', component: StudentFormsComponent, canActivate: [AuthGuard] },
+  { path: 'file/multiple', component: MultipleFilesUploadComponent, canActivate: [AuthGuard] },
   { path: 'profile', component: ConfigurationsComponent },
   { path: '**', redirectTo: '' }
 ];

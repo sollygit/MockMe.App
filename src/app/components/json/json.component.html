@@ -1,0 +1,13 @@
+<div class="component">
+  <h3>JSON File</h3>
+  <mat-card *ngFor="let movie of json" class="card">
+    <mat-card-header>
+      <mat-card-title>{{movie.title}}</mat-card-title>
+      <mat-card-subtitle>${{movie.price}} / {{movie.year}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <img class="img-prod" src="{{ movie.poster }}" alt="poster" />
+    </mat-card-content>
+  </mat-card>
+</div>

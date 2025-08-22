@@ -15,9 +15,9 @@ import { MovieComponent } from './components/movie/movie.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: TradesComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: TradesComponent },
+  { path: 'home', component: JsonComponent },
+  { path: 'trades', component: TradesComponent },
   { path: 'play', component: GameBoardComponent },
-  { path: 'json', component: JsonComponent },
   { path: 'starwars', component: MoviesComponent },
   { path: "starwars/:provider/:id", component: MovieComponent },
   { path: 'offer', component: OfferComponent, canActivate: [AuthGuard] },

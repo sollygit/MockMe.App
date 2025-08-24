@@ -13,7 +13,7 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { MovieComponent } from './components/movie/movie.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: TradesComponent, canActivate: [AuthGuard] },
+  { path: '', pathMatch: 'full', component: JsonComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: JsonComponent },
   { path: 'trades', component: TradesComponent },

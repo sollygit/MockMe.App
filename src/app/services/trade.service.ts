@@ -7,9 +7,19 @@ import { ConfigurationService } from './configuration.service';
 
 @Injectable()
 export class TradeService {
-  private readonly _assetList = [{ id: 1, name: 'EUR/USD' }, { id: 2, name: 'JPY/USD' }, { id: 3, name: 'GBP/USD' }];
+  private readonly _assetList = [
+    { id: 1, name: 'EUR/USD' },
+    { id: 2, name: 'JPY/USD' },
+    { id: 3, name: 'GBP/USD' },
+    { id: 4, name: 'AUD/USD' },
+    { id: 5, name: 'USD/CAD' },
+    { id: 6, name: 'USD/CHF' },
+    { id: 7, name: 'NZD/USD' },
+    { id: 8, name: 'EUR/GBP' },
+    { id: 9, name: 'EUR/JPY' },
+    { id: 10, name: 'GBP/JPY' }
+  ];
   private readonly tradesUrl: string = `${this.configurations.restUrl}/api/trade`;
-  private readonly assetsUrl: string = `${this.configurations.restUrl}api/trade/assets`;
 
   private totalAmount = 0;
   
@@ -34,15 +44,6 @@ export class TradeService {
     return result.pipe(map(trade => {
       if (trade === null) throw new Error("Something went wrong");
       return trade;
-    }));
-  }
-
-  public getAssets() {
-    const response = this.http.get<Asset[]>(`${this.assetsUrl}`);
-
-    return response.pipe(map(assets => {
-      if (assets === null) throw new Error("Something went wrong");
-      return assets;
     }));
   }
 
@@ -83,8 +84,7 @@ export class TradeService {
 
   public generate() {
     const url = `${this.tradesUrl}/generate`;
-    const header = new HttpHeaders({ 'Content-Type': 'application/json' });
-    const result = this.http.post<BinaryTrade>(url, null, { headers: header });
+    const result = this.http.get<BinaryTrade>(url);
     return result.pipe(map(response => {
       if (response === null)
         throw new Error("Something went wrong");

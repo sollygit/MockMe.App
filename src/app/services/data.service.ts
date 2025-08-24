@@ -12,13 +12,13 @@ export interface SubmissionResult {
 
 @Injectable()
 export class DataService {
-  private countryUrl = `${this.configurations.restUrl}/api/mock/country`;
+  private countriesUrl = `${this.configurations.restUrl}/api/trade/countries`;
   private fileUploadUrl = `${this.configurations.restUrl}/api/file`;
   
   constructor(private httpClient: HttpClient, private configurations: ConfigurationService) { }
 
   public getCountries() {
-    return this.httpClient.get<Country[]>(this.countryUrl);
+    return this.httpClient.get<Country[]>(this.countriesUrl);
   }
 
   public getJsonFile() {

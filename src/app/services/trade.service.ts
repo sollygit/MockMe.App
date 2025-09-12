@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { Asset } from '../types/asset.type';
 import { BinaryTrade } from '../types/binary-trade.type';
 import { ConfigurationService } from './configuration.service';
 

@@ -81,6 +81,7 @@ export class OfferComponent implements OnInit {
     this.offer = null;
     localStorage.removeItem('offer');
     setTimeout(() => this.myForm.controls['stateControl'].reset(), 100);
+    setTimeout(() => this.myForm.controls['countryControl'].reset(), 100);
   }
 
 }

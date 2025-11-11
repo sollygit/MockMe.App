@@ -11,6 +11,7 @@
       [(ngModel)]="username"
       class="form-control"
       placeholder="Username"
+      title="admin or test"
       required
       autofocus
     />
@@ -24,6 +25,7 @@
       [(ngModel)]="password"
       class="form-control"
       placeholder="Password"
+      title="password"
       required
     />
     <label for="inputPassword">Password</label>
@@ -38,12 +40,4 @@
     [disabled]="busy">
     Sign in
   </button>
-
-  <div class="small text-secondary mt-3 d-none d-sm-flex">
-    <strong>Example logins:</strong>
-    <ul>
-      <li>admin: password</li>
-      <li>test: password</li>
-    </ul>
-  </div>
 </form>

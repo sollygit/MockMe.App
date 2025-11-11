@@ -40,7 +40,8 @@ export class DataService {
     return this.httpClient.request<SubmissionResult[]>(
       new HttpRequest(
         'POST', `${this.fileUploadUrl}/${fileId}/uploads`,
-        formData, { reportProgress: true }
+        formData, 
+        { reportProgress: true }
       ) 
     );
   }

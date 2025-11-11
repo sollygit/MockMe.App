@@ -2,7 +2,7 @@ import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 import { ConfigurationService } from 'src/app/services/configuration.service';
-import { DataService, SubmissionResult } from 'src/app/services/data.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-multiple-files-upload',

@@ -11,7 +11,7 @@ export class BinaryTrade {
 
   public constructor(
     fields?: {
-      id?: number;
+      id?: string;
       asset?: Asset;
       expiration?: number;
       amount?: number;

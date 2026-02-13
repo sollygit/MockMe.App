@@ -1,6 +1,6 @@
 ## [MockMe App](https://mockme-app.azurewebsites.net)
 
-This front-end app is an Azure Static Web App 
+Angular front-end SPA deployed on Azure App Service
 
 ## Development Server:
 
